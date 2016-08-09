@@ -26,7 +26,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
     // tell the collection view how many items to show in its grid
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return people.count
     }
 
     // return an object of type UICollectionViewCell, which is custom class PersonCell
@@ -35,7 +35,50 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // this method automatically tries to reuse collection view cells
         // collection view cell is typecast to a PersonCell
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Person", forIndexPath: indexPath) as! PersonCell
+
+        // pull out the person from the people array at the correct position
+        let person = people[indexPath.item]
+
+        // set the name label to the person's name
+        cell.name.text = person.name
+
+        // createa a UIImage from the person's image filename
+        let path = getDocumentsDirectory().stringByAppendingPathComponent(person.image)
+        cell.imageView.image = UIImage(contentsOfFile: path)
+        // set a border on the image view
+        cell.imageView.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).CGColor
+        cell.imageView.layer.borderWidth = 2
+        // set rounded corners on the image view
+        cell.imageView.layer.cornerRadius = 3
+
+        // also set rounded corners on the whole cell
+        cell.layer.cornerRadius = 7
+
         return cell
+    }
+
+    // this method is triggered when the user taps a cell
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        // extract the person from the people array at the index tapped
+        let person = people[indexPath.item]
+
+        /// show a UIAlertController asking the user to rename that person
+        let ac = UIAlertController(title: "Rename person", message: nil, preferredStyle: .Alert)
+        // add a text field to the alert controller
+        ac.addTextFieldWithConfigurationHandler(nil)
+        // add an action to cancel the alert
+        ac.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        // add an action to save the change; note the closure
+        ac.addAction(UIAlertAction(title: "OK", style: .Default) { [unowned self, ac] _ in
+            // pull out the text field value
+            let newName = ac.textFields![0]
+            // assign the value to the person's name property
+            person.name = newName.text!
+            // reload the collection view
+            self.collectionView.reloadData()
+            })
+
+        presentViewController(ac, animated: true, completion: nil)
     }
 
     // implementation for UIImagePickerControllerDelegate
