@@ -17,6 +17,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         super.viewDidLoad()
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addNewPerson))
+
+        /// load the people array back from disk when the app runs
+        let defaults = NSUserDefaults.standardUserDefaults()
+        // pull out an optional NSData
+        if let savedPeople = defaults.objectForKey("people") as? NSData {
+            // convert the NSData to an object graph (the people array)
+            people = NSKeyedUnarchiver.unarchiveObjectWithData(savedPeople) as! [Person]
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,6 +84,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             person.name = newName.text!
             // reload the collection view
             self.collectionView.reloadData()
+            // save the new name in NSUserDefaults
+            self.save()
             })
 
         presentViewController(ac, animated: true, completion: nil)
@@ -116,6 +126,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collectionView.reloadData()
 
         dismissViewControllerAnimated(true, completion: nil)
+
+        // save the new person in NSUserDefaults
+        save()
     }
 
     func getDocumentsDirectory() -> NSString {
@@ -131,6 +144,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // the current class needs to conform to both UIImagePickerControllerDelegate and UINavigationControllerDelegate
         picker.delegate = self
         presentViewController(picker, animated: true, completion: nil)
+    }
+
+    func save() {
+        // convert the people array into an NSData object
+        let savedData = NSKeyedArchiver.archivedDataWithRootObject(people)
+        // save the NSData to NSUserDefaults
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(savedData, forKey: "people")
     }
 }
 

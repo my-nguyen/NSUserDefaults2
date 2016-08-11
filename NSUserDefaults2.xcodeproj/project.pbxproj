@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0FD4E8251D59973300684E50 /* NamesToFaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NamesToFaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FD4E8251D59973300684E50 /* NSUserDefaults2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSUserDefaults2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FD4E8281D59973300684E50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FD4E82A1D59973300684E50 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0FD4E82D1D59973300684E50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		0FD4E8261D59973300684E50 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0FD4E8251D59973300684E50 /* NamesToFaces.app */,
+				0FD4E8251D59973300684E50 /* NSUserDefaults2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,9 +73,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0FD4E8241D59973300684E50 /* NamesToFaces */ = {
+		0FD4E8241D59973300684E50 /* NSUserDefaults2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0FD4E8371D59973300684E50 /* Build configuration list for PBXNativeTarget "NamesToFaces" */;
+			buildConfigurationList = 0FD4E8371D59973300684E50 /* Build configuration list for PBXNativeTarget "NSUserDefaults2" */;
 			buildPhases = (
 				0FD4E8211D59973300684E50 /* Sources */,
 				0FD4E8221D59973300684E50 /* Frameworks */,
@@ -85,9 +85,9 @@
 			);
 			dependencies = (
 			);
-			name = NamesToFaces;
+			name = NSUserDefaults2;
 			productName = NamesToFaces;
-			productReference = 0FD4E8251D59973300684E50 /* NamesToFaces.app */;
+			productReference = 0FD4E8251D59973300684E50 /* NSUserDefaults2.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -105,7 +105,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0FD4E8201D59973300684E50 /* Build configuration list for PBXProject "NamesToFaces" */;
+			buildConfigurationList = 0FD4E8201D59973300684E50 /* Build configuration list for PBXProject "NSUserDefaults2" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -118,7 +118,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0FD4E8241D59973300684E50 /* NamesToFaces */,
+				0FD4E8241D59973300684E50 /* NSUserDefaults2 */,
 			);
 		};
 /* End PBXProject section */
@@ -261,8 +261,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NamesToFaces/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nguyen.NamesToFaces;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nguyen.NSUserDefaults2;
+				PRODUCT_NAME = NSUserDefaults2;
 			};
 			name = Debug;
 		};
@@ -272,15 +272,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NamesToFaces/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nguyen.NamesToFaces;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nguyen.NSUserDefaults2;
+				PRODUCT_NAME = NSUserDefaults2;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0FD4E8201D59973300684E50 /* Build configuration list for PBXProject "NamesToFaces" */ = {
+		0FD4E8201D59973300684E50 /* Build configuration list for PBXProject "NSUserDefaults2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0FD4E8351D59973300684E50 /* Debug */,
@@ -289,13 +289,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0FD4E8371D59973300684E50 /* Build configuration list for PBXNativeTarget "NamesToFaces" */ = {
+		0FD4E8371D59973300684E50 /* Build configuration list for PBXNativeTarget "NSUserDefaults2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0FD4E8381D59973300684E50 /* Debug */,
 				0FD4E8391D59973300684E50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
